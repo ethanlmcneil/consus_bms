@@ -1,0 +1,47 @@
+consus_bms/
+│
+├── app/
+│   ├── api/                 # FastAPI route handlers
+│   │   ├── __init__.py
+│   │   ├── battery.py
+│   │   └── health.py
+│   │
+│   ├── core/                # Core app setup, settings, logging
+│   │   ├── __init__.py
+│   │   ├── config.py        # Loads .env and environment variables
+│   │   └── logging.py
+│   │
+│   ├── models/              # SQLAlchemy models
+│   │   ├── __init__.py
+│   │   └── battery.py
+│   │
+│   ├── schemas/             # Pydantic schemas for request/response
+│   │   ├── __init__.py
+│   │   └── battery.py
+│   │
+│   ├── services/            # Business logic, charge control
+│   │   ├── __init__.py
+│   │   └── battery_service.py
+│   │
+│   ├── tasks/               # Celery periodic tasks, background jobs
+│   │   ├── __init__.py
+│   │   └── schedule.py
+│   │
+│   └── utils/               # Helpers like API integrations (Octopus, NG, etc.)
+│       ├── __init__.py
+│       └── octopus_api.py
+│
+├── alembic/                 # DB migrations
+│
+├── worker/
+│   └── celery_worker.py     # Entry point for Celery worker
+│
+├── tests/                   # Unit + integration tests
+│   └── test_battery.py
+│
+├── .env                     # Local environment variables
+├── Dockerfile               # Production Docker config
+├── docker-compose.yml       # Local dev orchestration
+├── requirements.txt         # Python dependencies
+├── main.py                  # FastAPI app entry point
+└── README.md
